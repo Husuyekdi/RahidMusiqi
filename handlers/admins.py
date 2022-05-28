@@ -111,7 +111,7 @@ async def authenticate(client, message):
 async def deautenticate(client, message):
     global admins
     if not message.reply_to_message:
-        await "✅ yetkisizleştirmek için mesaj atınız!")
+        await message.reply("✅ yetkisizleştirmek için mesaj atınız!")
         return
     if message.reply_to_message.from_user.id in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
