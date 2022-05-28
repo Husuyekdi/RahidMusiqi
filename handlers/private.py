@@ -90,12 +90,12 @@ async def bilgi(_, message: Message):
 
 @Client.on_callback_query(filters.regex("hərkəs"))
 async def herkes(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün komut menüsü 😉\n\n ▶️  ▶️ /oynat - şarkı çalmak için youtube url'sine veya şarkı dosyasına yanıt verme
- ▶️ /oynat  - istediğiniz şarkıyı çal
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün komut menüsü 😉\n\n ▶️ /oynat - Mahnı oxutmaq üçün youtube url'sinə vəya mahnı dosyasına yanıt verin
+ ▶️ /oynat  - istədiyiniz mahnı tap
  🔴 
- 🎵 /bul  - istediğiniz şarkıları hızlı bir şekilde bulun
- 🎵 /vbul istediğiniz videoları hızlı bir şekilde bulun
- 🔍 /ara  - youtube'da ayrıntıları içeren videoları arama\n\n</b>""",
+ 🎵 /bul  - istədiyiniz mahnıları sürətli bir şəkildə tapın
+ 🎵 /vbul istədiyiniz videoları sürətli bir şəkildə tapın
+ 🔍 /ara  - youtube'da olan videoları axtarın\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
@@ -113,14 +113,14 @@ async def herkes(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("admin"))
 async def admin(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botu adminlər üçün komut menüsü 🤩\n\n ▶️ ▶️ /devam - şarkı çalmaya devam et
- ⏸️ /durdur - çalan parçayı duraklatmak için
- 🔄 /atla- Sıraya alınmış müzik parçasını atlatır.
- ⏹ /son - müzik çalmayı durdurma
- 🔼 /ver botun sadece yönetici için kullanılabilir olan komutlarını kullanabilmesi için kullanıcıya yetki ver
- 🔽 /al botun yönetici komutlarını kullanabilen kullanıcının yetkisini al
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botu adminlər üçün komut menüsü 🤩\n\n ▶️ /devam - Mahnı oxutmağa davam et
+ ⏸️ /durdur - Mahnını dayandırmaq
+ 🔄 /atla- Sıraya alınmış musiqi parçasını atlat.
+ ⏹ /son - musiqini dayandır
+ 🔼 /ver botu istifadə etmək üçün istifadəçiyə yetki ver
+ 🔽 /al Bot üçün istifadəçinin yetkisini al
 
- ⚪ /asistan - Müzik asistanı grubunuza katılır.\n\n</b>""",
+ ⚪ /asistan - Musiqi asistanı qrupuna qoşulur.\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
