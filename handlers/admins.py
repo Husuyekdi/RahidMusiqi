@@ -21,7 +21,7 @@ ACTV_CALLS = []
 @authorized_users_only
 async def durdur(_, message: Message):
     await callsmusic.pytgcalls.pause_stream(message.chat.id)
-    a = await message.reply_text("▶️ **Musiqi Dayandırıldı!**\n\n• Musiqi İşlətməyə davam etmək Üçün **komut » davam**")
+    a = await message.reply_text("▶️ **Musiqi Dayandırıldı!**\n\n• Musiqi İşlətməyə davam etmək üçün **komut » davam**")
     await sleep(3)
     await a.delete()
     
