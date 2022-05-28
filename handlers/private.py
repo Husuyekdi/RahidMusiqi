@@ -22,7 +22,7 @@ async def start(_, message: Message):
                         "🔊 Asistan", url="https://t.me/Rahid_Music"
                     ),
                     InlineKeyboardButton(
-                        "😍 Sahibim", url="https://t.me/Rahid_2003"
+                        "😍Sahibim", url="https://t.me/Rahid_2003"
                     )
                 ],
                 [
@@ -65,7 +65,7 @@ async def bilgi(_, message: Message):
 
 @Client.on_callback_query(filters.regex("cbbilgi"))
 async def cbbilgi(_, query: CallbackQuery):
-    await query.edit_message_text(" ❗ Not:\nBotun aktiv işləməsi üçün bu üç yetki lazımdır:\n- Mesaj silmə yetkisi,\n- Bağlantı ilə dəvət etmə yetkisi,\n- Səsli sohbəti yönətmə yetkisi.", 
+    await query.edit_message_text(" ❗ Not:\nBotun aktiv işləməsi üçün bu üç yetki lazımdır:\n- Mesaj silmə yetkisi,\n- Bağlantı ilə dəvət etmə yetkisi,\n- Səsli sohbət yönətmə yetkisi.", 
     reply_markup=InlineKeyboardMarkup(
       [
         [
@@ -90,7 +90,7 @@ async def cbbilgi(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("herkes"))
 async def herkes(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün komut menüsü 😉\n\n ▶️ /play - musiqi oxutmaq üçün youtube url'sinə vəya musiqi dosyasına yanıt verin\n ▶️ /play <song name> - istədiyiniz musiqi oxut\n 🔴 \n 🎵 /song <song name> - istədiyiniz musiqi sürətli bir şəkildə axtarin\n 🎵 /vbul - istədiyiniz videoları sürətli bir şəkildə axtarın\n 🔍 /video <query> - youtube'da olan videoları axtarın\n\n</b>""",
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün komut menüsü 😉\n\n ▶️ /play - musiqi oxutmaq üçün youtube url'sinə vəya musiqi dosyasına yanıt verin\n ▶️ /play <song name> - istədiyiniz musiqi oxut\n 🔴 \n 🎵 /song <song name> - istədiyiniz musiqi sürətli bir şəkildə axtarın\n 🎵 /vbul - istədiyiniz videoları sürətli bir şəkildə axtarın\n 🔍 /video <query> - youtube'da olan videoları axtarın\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
@@ -113,7 +113,7 @@ async def admin(_, query: CallbackQuery):
              [
                  [
                      InlineKeyboardButton(
-                         "🇦🇿 Sahib", url="https://t.me/Rahid_44")
+                         "🇦🇿 Sahib", url="https://t.me/Rahid_2003")
                  ],
                  [
                      InlineKeyboardButton(
@@ -131,7 +131,7 @@ async def cbstart(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ Məni Qrupa əlavə Et ❱ ➕", url=f"https://t.me/BTO_Music_Bot?startgroup=true"
+                        "➕ ❰ Məni Qrupa Əlavə Et ❱ ➕", url=f"https://t.me/BTO_Music_Bot?startgroup=true"
                     )
                 ],
                 [
@@ -147,7 +147,7 @@ async def cbstart(_, query: CallbackQuery):
                         "🌀 Əmrlər (Help)" , callback_data= "cbbilgi"
                     ),
                     InlineKeyboardButton(
-                        "Rəsmi Kanal 🇦🇿", url=f"https://t.me/Rahid_Music"
+                        "Rəsmi Kanal 🇦🇿", url=f"https://t.me/Rahid_44"
                     )
                 ]
                 
