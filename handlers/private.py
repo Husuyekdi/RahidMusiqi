@@ -27,7 +27,7 @@ async def start(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "🧩 Komutlar" , callback_data= "cbbilgi"
+                        "🧩 Komutlar", callback_data= "cbbilgi"
                     ),
                     InlineKeyboardButton(
                         "Rəsmi Kanal 🇦🇿", url=f"https://t.me/Rahid_44"
