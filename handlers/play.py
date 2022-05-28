@@ -76,9 +76,9 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     draw.text(
         (190, 590), f"Parçanın süresi: {duration}", (255, 255, 255), font=font
     )
-    draw.text((190, 630), f"Görüntülenme sayısı: {views}", (255, 255, 255), font=font)
+    draw.text((190, 630), f"Baxış sayısı: {views}", (255, 255, 255), font=font)
     draw.text((190, 670),
-        f"Ekleyen kişi: {requested_by}",
+        f"Əlavə edən: {requested_by}",
         (255, 255, 255),
         font=font,
     )
@@ -214,7 +214,7 @@ async def play(_, message: Message):
                     [
                         [
                             InlineKeyboardButton(
-                                text="İzlemek için 🎬",
+                                text="İzləmək üçün 🎬",
                                 url=f"https://youtube.com")
 
                         ]
