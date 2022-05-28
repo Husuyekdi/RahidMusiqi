@@ -47,10 +47,10 @@ async def bilgi(_, message: Message):
              [
                  [
                      InlineKeyboardButton(
-                         "🔴 Hərkəs üçün komutlar", callback_data="hərkəs")
+                         "🔴Herkes üçün komutlar", callback_data="herkes")
                  ],[                     
                      InlineKeyboardButton(
-                         "⚫ Adminlər üçün komutlar", callback_data="admin")
+                         "⚫ Adminler üçün komutlar", callback_data="admin")
                  ],[
                      InlineKeyboardButton(
                          "Ana menü🏠", callback_data="cbstart")
@@ -70,7 +70,7 @@ async def bilgi(_, message: Message):
              [
         [
           InlineKeyboardButton(
-            "✨Hərkəs üçün Komutlar", callback_data ="hərkəs")
+            "✨Herkes üçün Komutlar", callback_data ="herkes")
         ],
         [
           InlineKeyboardButton(
@@ -88,13 +88,13 @@ async def bilgi(_, message: Message):
      ))
 
 
-@Client.on_callback_query(filters.regex("hərkəs"))
+@Client.on_callback_query(filters.regex("herkes"))
 async def herkes(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün komut menüsü 😉\n\n ▶️ /oynat - Mahnı oxutmaq üçün youtube url'sinə vəya mahnı dosyasına yanıt verin
- ▶️ /oynat  - istədiyiniz mahnı tap
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün komut menüsü 😉\n\n ▶️ /play - Mahnı oxutmaq üçün youtube url'sinə vəya mahnı dosyasına yanıt verin
+ ▶️ /play  - istədiyiniz mahnı tap
  🔴 
- 🎵 /bul  - istədiyiniz mahnıları sürətli bir şəkildə tapın
- 🎵 /vbul istədiyiniz videoları sürətli bir şəkildə tapın
+ 🎵 /song  - istədiyiniz mahnıları sürətli bir şəkildə tapın
+ 🎵 /video istədiyiniz videoları sürətli bir şəkildə tapın
  🔍 /ara  - youtube'da olan videoları axtarın\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
