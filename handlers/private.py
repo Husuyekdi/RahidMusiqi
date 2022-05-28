@@ -90,7 +90,12 @@ async def bilgi(_, message: Message):
 
 @Client.on_callback_query(filters.regex("hərkəs"))
 async def herkes(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün komut menüsü 😉\n\n ▶️ /oynat - mahnı oxunması üçün youtube url'sinə vəya mahnı dosyasına yanıt ver\n ▶️ /oynat <song name> - istədiyiniz mahnıyı oxut\n 🔴 \n 🎵 /bul <song name> - istədiyiniz mahnıları sürətli bir şəkildə tapın\n 🎵 /vbul istədiyiniz videoları sürətli bir şəkildə tapın\n 🔍 /ara <query> - youtube'da olan videoları tapmaq\n\n</b>""",
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün komut menüsü 😉\n\n ▶️  ▶️ /oynat - şarkı çalmak için youtube url'sine veya şarkı dosyasına yanıt verme
+ ▶️ /oynat  - istediğiniz şarkıyı çal
+ 🔴 
+ 🎵 /bul  - istediğiniz şarkıları hızlı bir şekilde bulun
+ 🎵 /vbul istediğiniz videoları hızlı bir şekilde bulun
+ 🔍 /ara  - youtube'da ayrıntıları içeren videoları arama\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
@@ -108,7 +113,14 @@ async def herkes(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("admin"))
 async def admin(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botu adminlər üçün komut menüsü 🤩\n\n ▶️ /devam - mahnı oxumağa davam et\n ⏸️ /durdur - Mahnını dayandırmaq üçün\n 🔄 /atla- Sıraya alınmış musiqi parçasını atlatır.\n ⏹ /son - musiqi dayandırmaq\n 🔼 /ver botun sadəcə yönetici üçün işləməsi olan komutlar üçün istifadəciyə yetki ver\n 🔽 /al botun yönetici komutları istifadəçi yetkisini al\n\n ⚪ /asistan - Müzik asistanı qrupunuza qoşulur.\n\n</b>""",
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botu adminlər üçün komut menüsü 🤩\n\n ▶️ ▶️ /devam - şarkı çalmaya devam et
+ ⏸️ /durdur - çalan parçayı duraklatmak için
+ 🔄 /atla- Sıraya alınmış müzik parçasını atlatır.
+ ⏹ /son - müzik çalmayı durdurma
+ 🔼 /ver botun sadece yönetici için kullanılabilir olan komutlarını kullanabilmesi için kullanıcıya yetki ver
+ 🔽 /al botun yönetici komutlarını kullanabilen kullanıcının yetkisini al
+
+ ⚪ /asistan - Müzik asistanı grubunuza katılır.\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
