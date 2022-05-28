@@ -16,23 +16,23 @@ from pytgcalls.types.input_stream import InputStream
 
 ACTV_CALLS = []
 
-@Client.on_message(command(["durdur", "pause"]) & other_filters)
+@Client.on_message(command(["Dayandırıldı", "pause"]) & other_filters)
 @errors
 @authorized_users_only
 async def durdur(_, message: Message):
     await callsmusic.pytgcalls.pause_stream(message.chat.id)
-    a = await message.reply_text("▶️ **Müzik duraklatıldı!**\n\n• Müzik kullanımına devam etmek için **komut » devam**")
+    a = await message.reply_text("▶️ **Musiqi Dayandırıldı!**\n\n• Musiqi İşlətməyə davam etmək Üçün **komut » davam**")
     await sleep(3)
     await a.delete()
     
 
 
-@Client.on_message(command(["devam", "resume"]) & other_filters)
+@Client.on_message(command(["davam", "resume"]) & other_filters)
 @errors
 @authorized_users_only
 async def devam(_, message: Message):
     await callsmusic.pytgcalls.resume_stream(message.chat.id)
-    a = await message.reply_text("⏸ **Müzik devam ediyor!**\n\n• Müzik kullanımı duraklatmak için **komut » durdur**")
+    a = await message.reply_text("⏸ **Musiqi davam edilir*\n\n• Musiqi kullanımı dayandırmaq üçün **komut » Dayandır**")
     await sleep(3)
     await a.delete()
     
@@ -46,7 +46,7 @@ async def stop(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("🙄 **Şu anda müzik çalmıyor**")
+        await message.reply_text("🙄 **Hal-Hazırda Musiqi oxunmur**")
     else:
         try:
             queues.clear(chat_id)
@@ -55,8 +55,7 @@ async def stop(_, message: Message):
         await callsmusic.pytgcalls.leave_group_call(chat_id)
         await _.send_message(
             message.chat.id,
-            "✅ **Müzik durduruldu !**\n\n• **Userbot sesli sohbet bağlantısı kesildi. !**"
-        )
+            "✅ *Music dayandır\n\n• userbot səsli söhbət bağlantısı kəsildi. !**
     
 @Client.on_message(command(["atla", "skip"]) & other_filters)
 @errors
@@ -96,15 +95,15 @@ async def atla(_, message: Message):
 async def authenticate(client, message):
     global admins
     if not message.reply_to_message:
-        await message.reply("Kullanıcıya Yetki Vermek için yanıtlayınız!")
+        await message.reply("İstifadəçiyə yetki vermək üçün yanıtlayın!")
         return
     if message.reply_to_message.from_user.id not in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
         new_admins.append(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
-        await message.reply("kullanıcı yetkili.")
+        await message.reply("İstifadəçi yetkili.")
     else:
-        await message.reply("✔ Kullanıcı Zaten Yetkili!")
+        await message.reply("✔ İstifadəçi onsuzda yetkilidir!")
 
 
 @Client.on_message(command("al") & other_filters)
@@ -112,7 +111,7 @@ async def authenticate(client, message):
 async def deautenticate(client, message):
     global admins
     if not message.reply_to_message:
-        await message.reply("✅ Kullanıcıyı yetkisizleştirmek için mesaj atınız!")
+        await "✅ yetkisizleştirmek için mesaj atınız!")
         return
     if message.reply_to_message.from_user.id in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
@@ -120,7 +119,7 @@ async def deautenticate(client, message):
         admins[message.chat.id] = new_admins
         await message.reply("kullanıcı yetkisiz")
     else:
-        await message.reply("✅ Kullanıcının yetkisi alındı!")
+        await message.reply("✅ yetkisin  alındı!")
 
 
 # Sesli sohbet için 0-200 arası yeni komut eklenmiş oldu. 
@@ -147,5 +146,5 @@ async def update_admin(client, message):
     admins[message.chat.id] = new_admins
     await client.send_message(
         message.chat.id,
-        "✅ **Bot yeniden başladı!**\n✅ **Admin listesi güncellendi!**"
+        "✅ **Bot yeniden başladı!**\n✅ **Admin listəsi güncəlləndi!**"
     )
