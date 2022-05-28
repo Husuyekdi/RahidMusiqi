@@ -8,21 +8,21 @@ from helpers.filters import command, other_filters2
 @Client.on_message(command(["start", f"start@{BOT_USERNAME}"]))
 async def start(_, message: Message):
                 await message.reply_photo(
-                "https://i.ibb.co/khRz42f/Turkish-Voice.jpg",
-                caption=(f"""**Merhaba {message.from_user.mention} 🎵\nBen {bot}!\nSesli sohbetlerde müzik çalabilen botum. Ban yetkisiz, Ses yönetimi yetkisi verip, Asistanı gruba ekleyiniz.\n\nDüzen Tasarım [Talia Müzik 🎙️](https://t.me/Gencler_Mekani).**"""),
+                "https://te.legra.ph/file/075499337227f2b0630ae.jpg",
+                caption=(f"""**Salam {message.from_user.mention} 🎵\nMən {bot}!\nSəsli söhbətlərdə musiqi botuyam. Səs yetkisi verib, Asistanı qrupa əlavə edin.\n\n[Qrup 🎙️](https://t.me/Gencler_Mekani).**"""),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ Grubuna Ekle ❱ ➕", url=f"https://t.me/Efsanestar_bot?startgroup=true"
+                        "➕ ❰ Qrupa Sal ❱ ➕", url=f"https://t.me/Rahid_Music_Bot?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔊 Asistan", url="https://t.me/Taliamusicasistant"
+                        "🔊 Asistan", url="https://t.me/Rahid_Music"
                     ),
                     InlineKeyboardButton(
-                        "💬 Sohbet", url="https://t.me/Gencler_Mekani"
+                        "💬 Support", url="https://t.me/Gencler_Mekani"
                     )
                 ],
                 [
@@ -30,7 +30,7 @@ async def start(_, message: Message):
                         "🧩 Komutlar" , callback_data= "cbbilgi"
                     ),
                     InlineKeyboardButton(
-                        "Resmi Kanal 🇦🇿", url=f"https://t.me/Rahid_44"
+                        "Rəsmi Kanal 🇦🇿", url=f"https://t.me/Rahid_44"
                     )
                 ]
                 
@@ -42,35 +42,35 @@ async def start(_, message: Message):
 
 @Client.on_message(command(["bilgi", f"bilgi@{BOT_USERNAME}"]))
 async def bilgi(_, message: Message):
-      await message.reply_text(" ❗ Not:\n Botun aktif çalışması için şu üç yetkiye ihtiyaç vardır:\n- Mesaj silme yetkisi,\n- Bağlantı ile davet etme yetkisi,\n- Sesli sohbeti yönetme yetkisi.", 
+      await message.reply_text(" ❗ Not:\n Botun aktiv işləməsi üçün üç yetkiye ehtiyac var:\n- Mesaj silme yetkisi,\n- Bağlantı ile davet etme yetkisi,\n- Sesli sohbeti yönetme yetkisi.", 
       reply_markup=InlineKeyboardMarkup(
              [
                  [
                      InlineKeyboardButton(
-                         "🔴 Herkes için komutlar", callback_data="herkes")
+                         "🔴 Hərkəs üçün komutlar", callback_data="hərkəs")
                  ],[                     
                      InlineKeyboardButton(
-                         "⚫ Adminler için komutlar", callback_data="admin")
+                         "⚫ Adminlər üçün komutlar", callback_data="admin")
                  ],[
                      InlineKeyboardButton(
                          "Ana menü🏠", callback_data="cbstart")
                  ],[
                      InlineKeyboardButton(
-                         "⚙ Geliştirici", url="https://t.me/Mahoaga")
+                         "⚙ Geliştirici", url="https://t.me/Rahid_2003")
                  ]
              ]
          )
     )
 
 
-@Client.on_callback_query(filters.regex("cbbilgi"))
-async def cbbilgi(_, query: CallbackQuery):
-    await query.edit_message_text(" ❗ Not:\nBotun aktif çalışması için şu üç yetkiye ihtiyaç vardır:\n- Mesaj silme yetkisi,\n- Bağlantı ile davet etme yetkisi,\n- Sesli sohbeti yönetme yetkisi.", 
-    reply_markup=InlineKeyboardMarkup(
-      [
+@Client.on_message(command(["bilgi", f"bilgi@{BOT_USERNAME}"]))
+async def bilgi(_, message: Message):
+      await message.reply_text(" ❗ Not:\n Botun aktiv işləməsi üçün üç yetkiye ehtiyac var:\n- Mesaj silme yetkisi,\n- Bağlantı ile davet etme yetkisi,\n- Sesli sohbeti yönetme yetkisi.", 
+      reply_markup=InlineKeyboardMarkup(
+             [
         [
           InlineKeyboardButton(
-            "✨Herkes için Komutlar", callback_data ="herkes")
+            "✨ Hərkəs üçün Komutlar", callback_data ="hərkəs")
         ],
         [
           InlineKeyboardButton(
@@ -82,20 +82,20 @@ async def cbbilgi(_, query: CallbackQuery):
         ],
         [
           InlineKeyboardButton(
-            "⚙ Geliştirici", url="https://t.me/Mahoaga")
+            "⚙ Geliştirici", url="https://t.me/Rahid_2003")
         ]
       ]
      ))
 
 
-@Client.on_callback_query(filters.regex("herkes"))
+@Client.on_callback_query(filters.regex("hərkəs"))
 async def herkes(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Selam {query.from_user.mention}!\nBu botun herkes için komut menüsü 😉\n\n ▶️ /oynat - şarkı çalmak için youtube url'sine veya şarkı dosyasına yanıt verme\n ▶️ /oynat <song name> - istediğiniz şarkıyı çal\n 🔴 \n 🎵 /bul <song name> - istediğiniz şarkıları hızlı bir şekilde bulun\n 🎵 /vbul istediğiniz videoları hızlı bir şekilde bulun\n 🔍 /ara <query> - youtube'da ayrıntıları içeren videoları arama\n\n</b>""",
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün komut menüsü 😉\n\n ▶️ /oynat - mahnı oxunması üçün youtube url'sinə vəya mahnı dosyasına yanıt ver\n ▶️ /oynat <song name> - istədiyiniz mahnıyı oxut\n 🔴 \n 🎵 /bul <song name> - istədiyiniz mahnıları sürətli bir şəkildə tapın\n 🎵 /vbul istədiyiniz videoları sürətli bir şəkildə tapın\n 🔍 /ara <query> - youtube'da olan videoları tapmaq\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
                      InlineKeyboardButton(
-                         "⚙ Geliştirici", url="https://t.me/Mahoaga")
+                         "⚙ Geliştirici", url="https://t.me/Rahid_2003")
                  ],
                  [
                      InlineKeyboardButton(
@@ -108,12 +108,12 @@ async def herkes(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("admin"))
 async def admin(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Selam {query.from_user.mention}!\nBu botun adminler için komut menüsü 🤩\n\n ▶️ /devam - şarkı çalmaya devam et\n ⏸️ /durdur - çalan parçayı duraklatmak için\n 🔄 /atla- Sıraya alınmış müzik parçasını atlatır.\n ⏹ /son - müzik çalmayı durdurma\n 🔼 /ver botun sadece yönetici için kullanılabilir olan komutlarını kullanabilmesi için kullanıcıya yetki ver\n 🔽 /al botun yönetici komutlarını kullanabilen kullanıcının yetkisini al\n\n ⚪ /asistan - Müzik asistanı grubunuza katılır.\n\n</b>""",
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botu adminlər üçün komut menüsü 🤩\n\n ▶️ /devam - mahnı oxumağa davam et\n ⏸️ /durdur - Mahnını dayandırmaq üçün\n 🔄 /atla- Sıraya alınmış musiqi parçasını atlatır.\n ⏹ /son - musiqi dayandırmaq\n 🔼 /ver botun sadəcə yönetici üçün işləməsi olan komutlar üçün istifadəciyə yetki ver\n 🔽 /al botun yönetici komutları istifadəçi yetkisini al\n\n ⚪ /asistan - Müzik asistanı qrupunuza qoşulur.\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
                      InlineKeyboardButton(
-                         "⚙ Geliştirici", url="https://t.me/Mahoaga")
+                         "⚙ Geliştirici", url="https://t.me/Rahid_2003")
                  ],
                  [
                      InlineKeyboardButton(
@@ -124,22 +124,24 @@ async def admin(_, query: CallbackQuery):
          )
 
 
-@Client.on_callback_query(filters.regex("cbstart"))
-async def cbstart(_, query: CallbackQuery):
-    await query.edit_message_text(f"""**Merhaba {query.from_user.mention} 🎵\nBen {bot}!\nSesli sohbetlerde müzik çalabilen botum. Ban yetkisiz, Ses yönetimi yetkisi verip, Asistanı gruba ekleyiniz.\n\nDüzen Tasarım [Talia Müzik 🎙️](https://t.me/Gencler_Mekani).**""",
+@Client.on_message(command(["start", f"start@{BOT_USERNAME}"]))
+async def start(_, message: Message):
+                await message.reply_photo(
+                "https://te.legra.ph/file/075499337227f2b0630ae.jpg",
+                caption=(f"""**Salam {message.from_user.mention} 🎵\nMən {bot}!\nSəsli söhbətlərdə musiqi botuyam. Səs yetkisi verib, Asistanı qrupa əlavə edin.\n\n[Qrup 🎙️](https://t.me/Gencler_Mekani).**"""),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ Grubuna Ekle ❱ ➕", url=f"https://t.me/Efsanestar_bot?startgroup=true"
+                        "➕ ❰ Grubuna Ekle ❱ ➕", url=f"https://t.me/Rahid_Music_Bot?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔊 Asistan", url="https://t.me/Taliamusicasistant"
+                        "🔊 Asistan", url="https://t.me/Rahid_Music"
                     ),
                     InlineKeyboardButton(
-                        "💬 Sohbet", url="https://t.me/Gencler_Mekani"
+                        "💬 Support", url="https://t.me/Gencler_Mekani"
                     )
                 ],
                 [
@@ -147,7 +149,7 @@ async def cbstart(_, query: CallbackQuery):
                         "🌀 Komutlar" , callback_data= "cbbilgi"
                     ),
                     InlineKeyboardButton(
-                        "Resmi Kanal 🇦🇿", url=f"https://t.me/Rahid_44"
+                        "Rəsmi Kanal 🇦🇿", url=f"https://t.me/Rahid_44"
                     )
                 ]
                 
