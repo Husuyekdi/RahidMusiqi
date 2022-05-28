@@ -55,7 +55,7 @@ async def stop(_, message: Message):
         await callsmusic.pytgcalls.leave_group_call(chat_id)
         await _.send_message(
             message.chat.id,
-            "✅ *Music dayandır\n\n• userbot səsli söhbət bağlantısı kəsildi. !**
+            "✅ *Music dayandır\n\n• userbot səsli söhbət bağlantısı kəsildi. !**",
     
 @Client.on_message(command(["atla", "skip"]) & other_filters)
 @errors
