@@ -14,7 +14,7 @@ async def start(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ Qrupa Sal ❱ ➕", url=f"https://t.me/Rahid_Music_Bot?startgroup=true"
+                        "➕ ❰ Qrupuna Sal ❱ ➕", url=f"https://t.me/Rahid_Music_Bot?startgroup=true"
                     )
                 ],
                 [
@@ -70,7 +70,7 @@ async def bilgi(_, message: Message):
              [
         [
           InlineKeyboardButton(
-            "✨ Hərkəs üçün Komutlar", callback_data ="hərkəs")
+            "✨Hərkəs üçün Komutlar", callback_data ="hərkəs")
         ],
         [
           InlineKeyboardButton(
@@ -133,7 +133,7 @@ async def start(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ Grubuna Ekle ❱ ➕", url=f"https://t.me/Rahid_Music_Bot?startgroup=true"
+                        "➕ ❰ Qrupuna Sal ❱ ➕", url=f"https://t.me/Rahid_Music_Bot?startgroup=true"
                     )
                 ],
                 [
