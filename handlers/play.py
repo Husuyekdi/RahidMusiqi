@@ -72,11 +72,11 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((190, 550), f"Hissə adı: {title}", (255, 255, 255), font=font)
+    draw.text((190, 550), f"Hissə Adı: {title}", (255, 255, 255), font=font)
     draw.text(
-        (190, 590), f"trekin müddəti: {duration}", (255, 255, 255), font=font
+        (190, 590), f"Trekin Müddəti: {duration}", (255, 255, 255), font=font
     )
-    draw.text((190, 630), f"Baxış sayısı: {views}", (255, 255, 255), font=font)
+    draw.text((190, 630), f"Baxış Sayısı: {views}", (255, 255, 255), font=font)
     draw.text((190, 670),
         f"Əlavə edən: {requested_by}",
         (255, 255, 255),
@@ -121,7 +121,7 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Əvvəlcə məni Admin edin!</b>")
+                        "<b>Əvvəlcə məni admin edin!</b>")
                     return
 
                 try:
@@ -138,7 +138,7 @@ async def play(_, message: Message):
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i>Salam {user.first_name}, faydalı userbot bu söhbətdə deyil admindən göndərməyi xahiş edin /play ilk dəfə əlavə etmək üçün əmri.</i>")
+            f"<i>Salam {user.first_name}, Faydalı userbot bu söhbətdə deyil admindən göndərməyi xahiş edin /play ilk dəfə əlavə etmək üçün əmri.</i>")
         return
     
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
