@@ -19,7 +19,7 @@ async def start(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔊 Asistan", url="https://t.me/Rahid_Music"
+                        "🔊 Asistan", url="https://t.me/Rahid_Asistan"
                     ),
                     InlineKeyboardButton(
                         "Sahibim 😍", url="https://t.me/Rahid_2003"
@@ -136,7 +136,7 @@ async def cbstart(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔊 Asistan", url="https://t.me/Rahid_Music"
+                        "🔊 Asistan", url="https://t.me/Rahid_Asistan"
                     ),
                     InlineKeyboardButton(
                         "Sahib 🇦🇿", url="https://t.me/Rahid_2003"
