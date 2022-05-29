@@ -74,7 +74,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     font = ImageFont.truetype("etc/font.otf", 32)
     draw.text((190, 550), f"Parça İsmi: {title}", (255, 255, 255), font=font)
     draw.text(
-        (190, 590), f"Parçanın süresi: {duration}", (255, 255, 255), font=font
+        (190, 590), f"trekin müddəti: {duration}", (255, 255, 255), font=font
     )
     draw.text((190, 630), f"Baxış sayısı: {views}", (255, 255, 255), font=font)
     draw.text((190, 670),
@@ -133,12 +133,12 @@ async def play(_, message: Message):
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b>🔵 Taşan Bekleme Hatası 🔵</b> \n\Merhaba {user.first_name}, yardımcı userbot, yoğun katılma istekleri nedeniyle grubunuza katılamadı. Userbot'un grupta yasaklı olmadığından emin olun ve daha sonra yeniden deneyin!")
+                        f"<b>🔵 Taşan Gözləmə xətası 🔵</b> \n\Salam {user.first_name}, Faydalı userbot çoxlu qoşulma sorğularına görə qrupunuza qoşula bilmədi. Userbot-un qrupda qadağan edilmədiyinə əmin olun və sonra yenidən cəhd edin!")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i>Merhaba {user.first_name}, yardımcı userbot bu sohbette değil, yöneticiden göndermesini isteyin /play ilk kez eklemek için komut.</i>")
+            f"<i>Salam {user.first_name}, faydalı userbot bu söhbətdə deyil admindən göndərməyi xahiş edin /play ilk dəfə əlavə etmək üçün əmri.</i>")
         return
     
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
@@ -155,13 +155,13 @@ async def play(_, message: Message):
         thumb_name = "https://i.ibb.co/Qkz78hx/images-1.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
-        views = "Yerel olarak eklendi"
+        views = "Yerli olaraq əlavə edildi"
 
         keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="✨ Kapat",
+                        text="✨ Bağla",
                         callback_data="cls")
                    
                 ]
@@ -198,10 +198,10 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🚀 İnfo", url=f"https://t.me/Gencler_Mekani"),
+                InlineKeyboardButton("🚀 Support", url=f"https://t.me/Gencler_Mekani"),
                 InlineKeyboardButton("📣 Kanal", url=f"https://t.me/Rahid_44"),
             ],[
-                InlineKeyboardButton("📲 Kapat", callback_data="cls"),
+                InlineKeyboardButton("📲 Bağla", callback_data="cls"),
             ],
         ]
     )
@@ -255,7 +255,7 @@ async def play(_, message: Message):
                 
         except Exception as e:
             await lel.edit(
-                "❌ məhnı Tapılmadı\n\nBaşqa mahnı yoxlayın yada mahnı adı düzgün deyil"
+                "❌ məhnı tapılmadı\n\nbaşqa mahnı yoxlayın və ya mahnı adı düzgün deyil"
             )
             print(str(e))
             return
@@ -266,7 +266,7 @@ async def play(_, message: Message):
                 InlineKeyboardButton("🚀 İnfo", url=f"https://t.me/Gencler_Mekani"),
                 InlineKeyboardButton("📣 Kanal", url=f"https://t.me/Rahid_44"),
             ],[
-                InlineKeyboardButton("📲 Kapat", callback_data="cls"),
+                InlineKeyboardButton("📲 Bağla", callback_data="cls"),
             ],
         ]
     )
@@ -286,7 +286,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png",
-        caption="**🎵 şᴀʀᴋɪ:** {}\n**🕒 ꜱüʀᴇ:** {} min\n**👉 ᴇᴋʟᴇʏᴇɴ:** {}\n\n**🚧 Parça Konumu:** {}".format(
+        caption="**🎵 Mahnı:** {}\n**🕒 ꜱüʀ:** {} min\n**👉 ᴇᴋʟᴇʏᴇɴ:** {}\n\n**🚧 Hissə yeri:** {}".format(
         title, duration, message.from_user.mention(), position
         ),
         reply_markup=keyboard)
@@ -306,7 +306,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**🎵 şᴀʀᴋɪ:** {}\n**🕒 ꜱüʀᴇ:** {} min\n**👉 ᴇᴋʟᴇʏᴇɴ:** {}\n\n**☑️ Şimdi şu anda `{}`...**".format(
+        caption="**🎵 MAHNI ADI:** {}\n**🕒 MÜDDƏTİ:** {} min\n**👉 İSTƏYƏN:** {}\n\n**☑️İndi hal-hazırda `{}`...**".format(
         title, duration, message.from_user.mention(), message.chat.title
         ), )
         os.remove("final.png")
