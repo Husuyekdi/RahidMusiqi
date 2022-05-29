@@ -255,7 +255,7 @@ async def play(_, message: Message):
                 
         except Exception as e:
             await lel.edit(
-                "❌ məhnı tapılmadı\n\nbaşqa mahnı yoxlayın və ya mahnı adı düzgün deyil"
+                "❌ Mahnı Tapılmadı\n\nBaşqa mahnı yoxlayın və ya mahnı adı düzgün deyil"
             )
             print(str(e))
             return
