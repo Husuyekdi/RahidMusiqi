@@ -72,7 +72,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((190, 550), f"Parça İsmi: {title}", (255, 255, 255), font=font)
+    draw.text((190, 550), f"Hissə adı: {title}", (255, 255, 255), font=font)
     draw.text(
         (190, 590), f"trekin müddəti: {duration}", (255, 255, 255), font=font
     )
@@ -263,7 +263,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🚀 İnfo", url=f"https://t.me/Gencler_Mekani"),
+                InlineKeyboardButton("🚀 Support", url=f"https://t.me/Gencler_Mekani"),
                 InlineKeyboardButton("📣 Kanal", url=f"https://t.me/Rahid_44"),
             ],[
                 InlineKeyboardButton("📲 Bağla", callback_data="cls"),
@@ -286,7 +286,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png",
-        caption="**🎵 Mahnı:** {}\n**🕒 ꜱüʀ:** {} min\n**👉 ᴇᴋʟᴇʏᴇɴ:** {}\n\n**🚧 Hissə yeri:** {}".format(
+        caption="**🎵 MAHNI ADI:** {}\n**🕒 MÜDDƏTİ:** {} min\n**👉 İSTƏYƏN:** {}\n\n**🚧 Hissə yeri:** {}".format(
         title, duration, message.from_user.mention(), position
         ),
         reply_markup=keyboard)
