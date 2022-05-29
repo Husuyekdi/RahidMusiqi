@@ -22,7 +22,7 @@ async def start(_, message: Message):
                         "🔊 Asistan", url="https://t.me/Rahid_Music"
                     ),
                     InlineKeyboardButton(
-                        "Sahibim😍", url="https://t.me/Rahid_2003"
+                        "Sahibim 😍", url="https://t.me/Rahid_2003"
                     )
                 ],
                 [
@@ -42,7 +42,7 @@ async def start(_, message: Message):
 
 @Client.on_message(command(["bilgi", f"bilgi@{BOT_USERNAME}"]))
 async def bilgi(_, message: Message):
-      await message.reply_text(" ❗ Not:\n Botun aktiv işləməsi üçün bu üç yetki lazımdır:\n- Mesaj silmə yetkisi,\n- Bağlantı ilə dəvət etmə yetkisi,\n- Səsli səhbəti yönətmə yetkisi.", 
+      await message.reply_text(" ❗ Not:\n Botun aktiv işləməsi üçün bu üç yetki vermək lazımdır ⬇️:\n- Mesaj silmə yetkisi,\n- Bağlantı ilə dəvət etmə yetkisi,\n- Səsli səhbəti yönətmə yetkisi.", 
       reply_markup=InlineKeyboardMarkup(
              [
                  [
@@ -65,7 +65,7 @@ async def bilgi(_, message: Message):
 
 @Client.on_callback_query(filters.regex("cbbilgi"))
 async def cbbilgi(_, query: CallbackQuery):
-    await query.edit_message_text(" ❗ Not:\nBotun aktiv işləməsi üçün bu üç yetki vermək lazımdır⬇️\n- Mesaj silmə yetkisi.\n- Bağlantı ilə dəvət etmə yetkisi.\n- Səsli sohbəti yönətmə yetkisi.", 
+    await query.edit_message_text(" ❗ Not:\nBotun aktiv işləməsi üçün bu üç yetki vermək lazımdır ⬇️\n- Mesaj silmə yetkisi.\n- Bağlantı ilə dəvət etmə yetkisi.\n- Səsli sohbəti yönətmə yetkisi.", 
     reply_markup=InlineKeyboardMarkup(
       [
         [
