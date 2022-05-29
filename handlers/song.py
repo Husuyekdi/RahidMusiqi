@@ -45,7 +45,7 @@ def bul(client, message):
 
     except Exception as e:
         m.edit(
-            "❌ Mahnı tapılmadı.\n\nBaşqa mahnı yazın, vəya mahnı adı düzgün deyil."
+            "❌ Mahnı tapılmadı.\n\nBaşqa mahnı yazın, və ya mahnı adı düzgün deyil."
         )
         print(str(e))
         return
@@ -55,7 +55,7 @@ def bul(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"☑️ **Adı**: [{title[:35]}]({link})\n🎬 **Mənbə**: YouTube\n⏱️ **Müddət**: `{duration}`\n👁‍🗨 **Baxış sayı**: `{views}`\n📤 **Tərəfindən**: @{BOT_USERNAME}"
+        rep = f"☑️ **Mahnı adı**: [{title[:35]}]({link})\n🎬 **Mənbə**: YouTube\n⏱️ **Müddət**: `{duration}`\n👁‍🗨 **Baxış sayı**: `{views}`\n📤 **Tərəfindən**: @{BOT_USERNAME}"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(dur_arr[i]) * secmul
@@ -107,7 +107,7 @@ async def vsong(client, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("📥 **video Yüklənir...**")
+        msg = await message.reply("📥 **Video Yüklənir...**")
         with YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
