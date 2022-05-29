@@ -46,7 +46,7 @@ async def stop(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("🙄 **Hal-Hazırda Musiqi oxunmur**")
+        await message.reply_text("🙄 **Hal-Hazırda musiqi oxunmur**")
     else:
         try:
             queues.clear(chat_id)
@@ -55,7 +55,7 @@ async def stop(_, message: Message):
         await callsmusic.pytgcalls.leave_group_call(chat_id)
         await _.send_message(
             message.chat.id,
-            "✅ *Music dayandır\n\n• userbot səsli söhbət bağlantısı kəsildi !**")
+            "✅ *Musiqini dayandır\n\n• userbot səsli söhbət bağlantısı kəsildi !**")
     
 @Client.on_message(command(["atla", "skip"]) & other_filters)
 @errors
@@ -111,15 +111,15 @@ async def authenticate(client, message):
 async def deautenticate(client, message):
     global admins
     if not message.reply_to_message:
-        await message.reply("✅ yetkisizleştirmek için mesaj atınız!")
+        await message.reply("✅ Yetkisini almaq üçün mesaj göndərin!")
         return
     if message.reply_to_message.from_user.id in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
         new_admins.remove(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
-        await message.reply("kullanıcı yetkisiz")
+        await message.reply("İstifadəçi yetkisiz")
     else:
-        await message.reply("✅ yetkisin  alındı!")
+        await message.reply("✅ yetkisi alındı!")
 
 
 # Sesli sohbet için 0-200 arası yeni komut eklenmiş oldu. 
@@ -130,9 +130,9 @@ async def change_ses(client, message):
     chat_id = message.chat.id
     try:
        callsmusic.pytgcalls.change_volume_call(chat_id, volume=int(range))
-       await message.reply(f"✅ **Birim olarak ayarlandı:** ```{range}%```")
+       await message.reply(f"✅ **Birim olaraq ayarlandı:** ```{range}%```")
     except Exception as e:
-       await message.reply(f"**hata:** {e}")
+       await message.reply(f"**xəta:** {e}")
 
 @Client.on_message(command("reload") & other_filters)
 @errors
