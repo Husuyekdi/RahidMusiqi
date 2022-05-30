@@ -82,7 +82,7 @@ async def cbbilgi(_, query: CallbackQuery):
         ],
         [
           InlineKeyboardButton(
-            "🇦🇿 Sahib", url="https://t.me/Rahid_2003")
+            "Sahib 🇦🇿", url="https://t.me/Rahid_2003")
         ]
       ]
      ))
