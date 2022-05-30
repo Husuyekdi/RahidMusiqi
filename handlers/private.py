@@ -90,7 +90,7 @@ async def cbbilgi(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("herkes"))
 async def herkes(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün əmr menyusu 😉\n\n ▶️ /play - musiqi oxutmaq üçün youtube url'sinə vəya musiqi dosyasına yanıt verin\n ▶️ /play <song name> - istədiyiniz musiqi oxut\n 🔴 \n 🎵 /song <song name> - istədiyiniz musiqi sürətli bir şəkildə axtarın\n 🎵 /vbul - istədiyiniz videoları sürətli bir şəkildə axtarın\n 🔍 /video <query> - youtube'da olan videoları axtarın\n\n</b>""",
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun hərkəs üçün əmr menyusu 😉\n\n ▶️ /play - Musiqi oxutmaq üçün youtube url'sinə vəya musiqi dosyasına yanıt verin\n ▶️ /play <song name> - İstədiyiniz musiqi oxut\n 🔴 \n 🎵 /song <song name> - İstədiyiniz musiqi sürətli bir şəkildə axtarın\n 🎵 /vbul - İstədiyiniz videoları sürətli bir şəkildə axtarın\n 🔍 /video <query> - Youtube'da olan videoları axtarın\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
@@ -108,7 +108,7 @@ async def herkes(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("admin"))
 async def admin(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun adminlər üçün əmr menyusu 🤩\n\n ▶️ /resume - musiqi oxutmağa davam et\n ⏸️ /durdur - oxuyan musiqini dayandır\n 🔄 /atla - Sıraya alınmış musiqiyə kecmək\n ⏹ /skip - musiqi oxumanı dayandır\n 🔼 /promote - botun sadəcə yönətici üçün olan Əmrlərini isdifadə üçün istifadəçiyə yetki ver\n 🔽 /demote - botun yönətici Əmrlərini isdifadə edən istifadəçinin yetkisini al\n\n ⚪ /asistan - Musiqi asistanı qrupunuza qoşulur.\n\n</b>""",
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun adminlər üçün əmr menyusu 🤩\n\n ▶️ /resume - Musiqi oxutmağa davam et\n ⏸️ /durdur - Oxuyan musiqini dayandır\n 🔄 /atla - Sıraya alınmış musiqiyə kec\n ⏹ /skip - Musiqi oxumanı dayandır\n 🔼 /promote - Botun sadəcə yönətici üçün olan Əmrlərini isdifadə üçün istifadəçiyə yetki ver\n 🔽 /demote - Botun yönətici Əmrlərini isdifadə edən istifadəçinin yetkisini al\n\n ⚪ /asistan - Musiqi asistanı qrupunuza qoşulur.\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
@@ -139,12 +139,12 @@ async def cbstart(_, query: CallbackQuery):
                         "🔊 Asistan", url="https://t.me/Rahid_Asistan"
                     ),
                     InlineKeyboardButton(
-                        "Sahib 🇦🇿", url="https://t.me/Rahid_2003"
+                        "Support 💬", url="https://t.me/Gencler_Mekani"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌀 Əmrlər (Help)" , callback_data= "cbbilgi"
+                        "🧩 Əmrlər" , callback_data= "cbbilgi"
                     ),
                     InlineKeyboardButton(
                         "Rəsmi Kanal 🇦🇿", url=f"https://t.me/Rahid_44"
