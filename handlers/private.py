@@ -74,7 +74,7 @@ async def cbbilgi(_, query: CallbackQuery):
         ],
         [
           InlineKeyboardButton(
-            "👑Admin Əmrləri",callback_data ="admin")
+            "👑Admin əmrləri",callback_data ="admin")
         ],
         [
           InlineKeyboardButton(
