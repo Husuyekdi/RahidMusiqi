@@ -56,7 +56,7 @@ async def bilgi(_, message: Message):
                          "Geri 🔄", callback_data="cbstart")
                  ],[
                      InlineKeyboardButton(
-                         "Support 💬", url="https://t.me/Gencler_Mekani")
+                         "Sahib 🇦🇿", url="https://t.me/Rahid_2003")
                  ]
              ]
          )
