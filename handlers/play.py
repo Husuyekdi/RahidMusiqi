@@ -101,7 +101,7 @@ async def cls(_, query: CallbackQuery):
                    & ~filters.via_bot)
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **ʟüᴛꜰᴇɴ ʙᴇᴋʟᴇʏiɴiᴢ...**")
+    lel = await message.reply("🔄 **Zəhmət olmasa gözləyin...**")
     
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -255,7 +255,7 @@ async def play(_, message: Message):
                 
         except Exception as e:
             await lel.edit(
-                "❌ Mahnı Tapılmadı\n\nBaşqa mahnı yoxlayın və ya mahnı adı düzgün deyil"
+                "❌ Mahnı tapılmadı\n\nBaşqa mahnı yoxlayın və ya mahnı adı düzgün deyil"
             )
             print(str(e))
             return
@@ -286,7 +286,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png",
-        caption="**🎵 MAHNI ADI:** {}\n**🕒 MÜDDƏTİ:** {} min\n**👉 İSTƏYƏN:** {}\n\n**🚧 Hissə yeri:** {}".format(
+        caption="**🎵 Mahnı Adı:** {}\n**🕒 Müddət:** {} min\n**👉 İstəyən:** {}\n\n**🚧 Hissə yeri:** {}".format(
         title, duration, message.from_user.mention(), position
         ),
         reply_markup=keyboard)
@@ -306,7 +306,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**🎵 MAHNI ADI:** {}\n**🕒 MÜDDƏTİ:** {} min\n**👉 İSTƏYƏN:** {}\n\n**☑️İndi hal-hazırda `{}`...**".format(
+        caption="**🎵 Mahnı Adı:** {}\n**🕒 Müddət:** {} min\n**👉 İstəyən:** {}\n\n**☑️İndi hal-hazırda `{}`...**".format(
         title, duration, message.from_user.mention(), message.chat.title
         ), )
         os.remove("final.png")
