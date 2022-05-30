@@ -65,7 +65,7 @@ async def bilgi(_, message: Message):
 
 @Client.on_callback_query(filters.regex("cbbilgi"))
 async def cbbilgi(_, query: CallbackQuery):
-    await query.edit_message_text(" ❗ Qeyd:\nBotun aktiv işləməsi üçün bu üç yetki vermək lazımdır ⬇️\n- Mesaj silmə yetkisi.\n- Bağlantı ilə dəvət etmə yetkisi.\n- Səsli sohbəti yönətmə yetkisi.", 
+    await query.edit_message_text(" ❗ Qeyd:\nBotun aktiv işləməsi üçün bu üç yetki vermək lazımdır ⬇️\n- Mesaj silmə yetkisi.\n- Bağlantı ilə dəvət etmə yetkisi.\n- Səsli söhbəti yönətmə yetkisi.", 
     reply_markup=InlineKeyboardMarkup(
       [
         [
