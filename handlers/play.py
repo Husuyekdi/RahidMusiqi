@@ -232,7 +232,7 @@ async def play(_, message: Message):
         await lel.edit("🔎 **Zəhmət olmasa Gözləyin...**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("🔄 **Səsə daxil olunur..🔥**")
+        await lel.edit("🔄 **Səsə daxil olunur...🔥**")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
