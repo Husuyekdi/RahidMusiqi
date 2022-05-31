@@ -32,7 +32,7 @@ async def durdur(_, message: Message):
 @authorized_users_only
 async def devam(_, message: Message):
     await callsmusic.pytgcalls.resume_stream(message.chat.id)
-    a = await message.reply_text("⏸ **Musiqi davam edilir*\n\n• Musiqi kullanımı dayandırmaq üçün **komut » Dayandır**")
+    a = await message.reply_text("⏸ **Musiqi davam edilir*\n\n• Musiqini dayandırmaq üçün **komut » Dayandır**")
     await sleep(3)
     await a.delete()
     
@@ -46,7 +46,7 @@ async def stop(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("🙄 **Hal-Hazırda musiqi oxunmur**")
+        await message.reply_text("🙄 **Hal-hazırda musiqi oxunmur**")
     else:
         try:
             queues.clear(chat_id)
@@ -66,7 +66,7 @@ async def atla(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        a = await message.reply_text("Mahnı Keçmək Üçün Heçnə Yoxdu!")
+        a = await message.reply_text("Mahnı keçmək üçün heçnə yoxdu!")
         await sleep(3)
         await a.delete()
     else:
