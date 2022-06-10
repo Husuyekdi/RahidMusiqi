@@ -8,29 +8,29 @@ from helpers.filters import command, other_filters2
 @Client.on_message(command(["start", f"start@{BOT_USERNAME}"]))
 async def start(_, message: Message):
                 await message.reply_photo(
-                "https://te.legra.ph/file/075499337227f2b0630ae.jpg",
-                caption=(f"""**Salam {message.from_user.mention} 🎵\nMən {bot}!\nSəsli söhbətlərdə musiqi oxuyan botam. Ban yetkisiz, Səs yetkisi verib, Asistanı qrupa əlavə edin.\n\nSahibim👉  [Rahid](https://t.me/Rahid_2003)**"""),
+                "https://te.legra.ph/file/7c2fb6164da45d904f354.jpg",
+                caption=(f"""**Salam {message.from_user.mention} 🎵\nMən @BanditosQrup'u üçün hazırlanmış musiqi botuyam!\nDigər Qruplara Girməyə icazəm yoxdur.\n\nSahibim 👉  [HÜSÜ](https://t.me/HusuSovetski)**"""),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ Məni Qrupa Əlavə Et ❱ ➕", url=f"https://t.me/Rahid_Music_Bot?startgroup=true"
+                        "Onsuzda Əlavə eliyəmmiyəcəysən 🙁", url=f"https://t.me/BanditosMusiqi?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔊 Asistan", url="https://t.me/Rahid_Asistan"
+                        "🎭 Asistant", url="https://t.me/BanditosMusiqiAsistant"
                     ),
                     InlineKeyboardButton(
-                        "Support 💬", url="https://t.me/Gencler_Mekani"
+                        "🔥 Qrup", url="https://t.me/BanditosQrup"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🧩 Əmrlər" , callback_data= "cbbilgi"
+                        "☄️ Əmrlər" , callback_data= "cbbilgi"
                     ),
                     InlineKeyboardButton(
-                        "Rəsmi Kanal 🇦🇿", url=f"https://t.me/Rahid_44"
+                        "Owner 🇦🇿", url=f"https://t.me/HusuSovetski"
                     )
                 ]
                 
@@ -56,7 +56,7 @@ async def bilgi(_, message: Message):
                          "Geri 🔄", callback_data="cbstart")
                  ],[
                      InlineKeyboardButton(
-                         "Sahib 🇦🇿", url="https://t.me/Rahid_2003")
+                         "Qrup ☘️", url="https://t.me/BanditosQrup")
                  ]
              ]
          )
@@ -82,7 +82,7 @@ async def cbbilgi(_, query: CallbackQuery):
         ],
         [
           InlineKeyboardButton(
-            "Sahib 🇦🇿", url="https://t.me/Rahid_2003")
+            "Sahib 🇦🇿", url="https://t.me/HusuSovetski")
         ]
       ]
      ))
@@ -95,7 +95,7 @@ async def herkes(_, query: CallbackQuery):
              [
                  [
                      InlineKeyboardButton(
-                         "Sahib 🇦🇿", url="https://t.me/Rahid_2003")
+                         "Sahib 🇦🇿", url="https://t.me/HusuSovetski")
                  ],
                  [
                      InlineKeyboardButton(
@@ -113,7 +113,7 @@ async def admin(_, query: CallbackQuery):
              [
                  [
                      InlineKeyboardButton(
-                         "Sahib 🇦🇿", url="https://t.me/Rahid_2003")
+                         "Qrup ⛓️", url="https://t.me/BanditosQrup")
                  ],
                  [
                      InlineKeyboardButton(
@@ -126,28 +126,28 @@ async def admin(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("cbstart"))
 async def cbstart(_, query: CallbackQuery):
-    await query.edit_message_text(f"""**Salam {query.from_user.mention} 🎵\nMən {bot}!\nSəsli sohbətlərdə musiqi oxuyan botam. Ban yetkisiz, Səs yönətim yetki verib, Asistanı qrupa əlavə edin.\n\nSahibim👉  [Rahid](https://t.me/Rahid_2003)**""",
+    await query.edit_message_text(f"""**Salam {query.from_user.mention} 🎵\nMən @BanditosQrup'u üçün hazırlanmış musiqi botuyam.\Digər Qruplara Girməyə icazəm yoxdur.\n\nSahibim👉  [HÜSÜ](https://t.me/HusuSovetski)**""",
          reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ Məni Qrupa Əlavə Et ❱ ➕", url=f"https://t.me/Rahid_Music_Bot?startgroup=true"
+                        "Onsuzda Qrupa əlavə eliyəmmiyəcəysən 🙁", url=f"https://t.me/BanditosMusiqiBot?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔊 Asistan", url="https://t.me/Rahid_Asistan"
+                        "🎭 Asistant", url="https://t.me/BanditosMusiqiAsistant"
                     ),
                     InlineKeyboardButton(
-                        "Support 💬", url="https://t.me/Gencler_Mekani"
+                        "⚡ Qrup", url="https://t.me/BanditosQrup"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🧩 Əmrlər" , callback_data= "cbbilgi"
+                        "☄️ Əmrlər" , callback_data= "cbbilgi"
                     ),
                     InlineKeyboardButton(
-                        "Rəsmi Kanal 🇦🇿", url=f"https://t.me/Rahid_44"
+                        "Owner 🇦🇿", url=f"https://t.me/HusuSovetski"
                     )
                 ]
                 
