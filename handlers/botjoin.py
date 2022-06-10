@@ -33,8 +33,8 @@ async def addchannel(client, message):
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"<b>🔵 Zaman Aşımı Hatası 🔵\n User {user.first_name} userbot için yoğun katılma istekleri nedeniyle grubunuza katılamadı! Asistanın grupta yasaklanmadığından emin olun."
-            "\n\n Yada Asistan Hesabını Qrupa özün əlavə et </b>",
+            f"<b>🔵 XƏTA 🔵\n User {user.first_name} Botun Qrupda Banda olub olmağından əmin ol."
+            "\n\n Yada Asistantı Hesabını özün əlavə et </b>",
         )
         return
     await message.reply_text(
@@ -47,7 +47,7 @@ async def rem(USER, message):
         await USER.leave_chat(message.chat.id)
     except:  
         await message.reply_text(
-            f"<b>İstifadəçi qrupunuzdan ayrılamadı!."
+            f"<b>İstifadəçi qrupunuzdan ayrılmadı!."
             "\n\nYada özün çıxara bilərsən</b>",
         )
         return
